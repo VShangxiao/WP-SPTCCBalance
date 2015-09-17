@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="SptccBalance.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SptccBalance"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar IsSticky="True">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Like" Label="给我好评" Click="BtnReview_Click" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Margin="19,0,10,0" Source="Assets/logo-md.png" Width="60" />
+            <TextBlock Grid.Column="1" 
+                       Text="关于" Margin="0,10,0,6.5" Style="{ThemeResource HeaderTextBlockStyle}" 
+                       FontSize="30" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </Grid>
+
+
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <StackPanel>
+                <TextBlock Text="v1.3"
+                           FontSize="22"
+                           Margin="0,0,0,5"/>
+                <TextBlock Text="本应用用于查询上海交通卡余额。数据来自 http://www.sptcc.com/ 官网。由于数据传输到系统存在一定延时，所查出的余额仅作参考。"
+                           FontSize="18"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,20"/>
+                
+                <TextBlock Text="关于作者"
+                           FontSize="22" Margin="0,0,0,5" />
+                <TextBlock Text="汪宇杰 (@Edi_Wang)，http://edi.wang 站长，专精ASP.NET网站开发，副业Windows Phone。微软脑残粉，关注需谨慎。永久坚持为微软平台开发免费、无广告、注重界面和交互的App。"
+                           FontSize="18"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,10"/>
+                
+                <HyperlinkButton FontSize="18" Foreground="#0072BC" Content="作者网站" NavigateUri="http://edi.wang" />
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
